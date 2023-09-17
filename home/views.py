@@ -5,12 +5,15 @@ def home(request):
     views = {}
     views['services'] = Services.objects.all()
     views['feedback'] = Feedback.objects.all()
+    views['frontpage'] = FrontPage.objects.all()
     return render(request,'index.html',views)
 
 def about(request):
     views = {}
     views['feedback'] = Feedback.objects.all()
-    return render(request,'about.html')
+    views['skills'] = Skills.objects.all()
+    return render(request, 'about.html', views)
+
 
 def contact(request):
     views = {}
@@ -54,7 +57,3 @@ def feedbacks(request):
     views['feedbacks'] = Feedback.objects.all()
     return render(request,'index.html',views)
 
-def skills(request):
-    views = {}
-    views['skills'] = Skills.objects.all()
-    return render(request, 'about.html',views)

@@ -54,3 +54,17 @@ class Skills(models.Model):
 
     def __str__(self):
         return self.skill
+
+class FrontPage(models.Model):
+    greetings = models.CharField(max_length=30)
+    fullname = models.CharField(max_length=20)
+    shortintro = models.CharField(max_length=100)
+    visitsite = models.TextField()
+    image = models.ImageField(upload_to='media')
+    secondimage = models.ImageField(upload_to='media')
+    infoheading = models.CharField(max_length=20)
+    infodetail = models.TextField()
+    Personalcv = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.fullname
